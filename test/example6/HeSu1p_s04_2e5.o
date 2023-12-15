@@ -1,0 +1,1125 @@
+          Code Name & Version = mcnp6.mpi, 6.3.0, development
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  +------------------------------------------------------------------------------------------------------------------+
+  | Copyright (c) 2018. Triad National Security, LLC. All rights reserved.                                           |
+  |   This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos National Laboratory  |
+  | (LANL), which is operated by Triad National Security, LLC for the U.S. Department of Energy/National Nuclear     |
+  | Security Administration.                                                                                         |
+  |   For a period of five years from February 14, 2018, the U.S. Government is granted for itself and others acting |
+  | on its behalf a nonexclusive, paid-up, irrevocable, worldwide license in this data to reproduce, prepare         |
+  | derivative works, and perform publicly and display publicly, by or on behalf of the U.S. Government.             |
+  |   Subsequent to the specified period or any extension granted, the U.S. Government is granted for itself and     |
+  | others acting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in this material to           |
+  | reproduce, prepare derivative works, distribute copies to the public, perform publicly and display publicly, and |
+  | to permit others to do so. The specific term of the license can be identified by inquiry made to the Contractor  |
+  | or DOE/NNSA.                                                                                                     |
+  |   User is subject to applicable United States and foreign laws, regulations, rules and decrees with respect to   |
+  | any transfer of the Intellectual Property and related technical data to foreign countries, including the U.S.    |
+  | Foreign Corrupt Practices Act, the Arms Control Act, the Export Administration Act, the U.S. Anti-Boycott Laws,  |
+  | and any regulations promulgated thereunder, including the International Traffic in Arms Regulations (ITAR), the  |
+  | U.S. Export Administration Regulations (EAR) and explicitly Title 10, Part 810 of the United States Code of      |
+  | Federal Regulations. FAILURE TO CONFORM TO SUCH LAWS, REGULATIONS, RULES, AND DECREES MAY RESULT IN CRIMINAL     |
+  | LIABILITY UNDER U.S. LAW.                                                                                        |
+  |   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS NOTICE. THIS SOFTWARE IS       |
+  | PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT |
+  | NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.   |
+  | NEITHER THE UNITED STATES NOR THE UNITED STATES DEPARTMENT OF ENERGY/NATIONAL NUCLEAR SECURITY ADMINSTRATION,    |
+  | NOR TRIAD NATIONAL SECURITY, LLC, NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY, EXPRESS OR IMPLIED, OR ASSUMES |
+  | ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF ANY INFORMATION,          |
+  | APPARATUS, PRODUCT, OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS.  |
+  +------------------------------------------------------------------------------------------------------------------+
+  
+ idum(1)=1 more digits for tally relative errors & lost particles.
+ prdmp(6) is the max. entries in TFC.
+
+1mcnp6.mpi version 6.3.0 ld=06/07/23                     09/12/23 07:06:20 
+ *************************************************************************                 probid =  09/12/23 07:06:20 
+Source version = devel-aa4567f628-dirty
+ n=HeSu1p_s04_2e5
+
+ 
+  comment.  Physics models disabled.
+         1-       He and Su, ANE 2010 and 2011, test 1
+         2-       C Cell specifications
+         3-       1 1  -0.6822752         -1                                 imp:n = 1 $ Coal inside the ball
+         4-       2 0                      1 -2                              imp:n = 1 $ void space
+         5-       3 0                      2                                 imp:n = 0 $ Zero-importance outer world
+         6-       
+         7-       C Surface specifications
+         8-       1 so 30.
+         9-       2 so 45.
+        10-       
+        11-       C Data cards
+        12-       mode n
+        13-       C isotropic point source
+        14-       sdef erg=d1 pos=0. 0. 0.
+        15-       sc1 flat energy spectrum from 1 to 14.1 MeV
+        16-       si1 1. 14.1
+        17-       sp1 0. 1.
+        18-       C Material
+        19-       c begin at.dens., wt.dens.  4.929841407E-02     0.675520000000
+        20-       c round at.dens., wt.dens.  4.929841406E-02     0.675519999608
+        21-       m1     nlib=00c
+        22-               1001 -3.37682384E-02        1002 -7.76162156E-06
+        23-               6012 -4.62712342E-01        6013 -5.42301768E-03
+        24-               7014 -6.72886714E-03        7015 -2.63328631E-05
+        25-               8016 -1.14527191E-01        8017 -4.63653604E-05
+        26-               8018 -2.64843545E-04
+        27-              11023 -1.35104000E-03
+        28-              12024 -1.05313550E-04       12025 -1.38888268E-05
+        29-              12026 -1.59016236E-05
+        30-              13027 -2.02656000E-02
+        31-              14028 -1.42732593E-02       14029 -7.50998985E-04
+        32-              14030 -5.12701709E-04
+        33-              16032 -6.39821023E-03       16033 -5.20965872E-05
+        34-              16034 -3.04135456E-04       16036 -7.57730967E-07
+        35-              17035 -1.51435812E-04       17037 -5.12201883E-05
+        36-              19039 -3.13904222E-04       19040 -4.03929083E-08
+        37-              19041 -2.38153847E-05
+        38-              22046 -2.67509137E-05       22047 -2.46489896E-05
+        39-              22048 -2.49419048E-04       22049 -1.86855267E-05
+        40-              22050 -1.82555215E-05
+        41-              26054 -2.09752812E-04       26056 -3.41447264E-03
+        42-              26057 -8.02654714E-05       26058 -1.08690770E-05
+        43-              31069 -2.00698629E-03       31071 -1.37061371E-03
+        44-       phys:n 14.2 0.01
+        45-       cut:n 1e20 0.05 0.05 0.01 0.01
+        46-       fc1 current across the coal ball interface
+        47-       f1:n 1
+        48-       fc4 total flux in coal ball
+        49-       f4:n 1
+        50-       sd4 1.
+        51-       nps 2e5
+        52-       prdmp 4j 1e4 1000
+        53-       idum 1
+        54-       dbcn 49j 2
+        55-       print 110 160
+        56-       rand gen=2 seed=110999000001 hist=600001
+        57-       
+
+ ***************************************************
+ * Random Number Generator  =                    2 *
+ * Random Number Seed       =         110999000001 *
+ * Random Number Multiplier =  9219741426499971445 *
+ * Random Number Adder      =                    1 *
+ * Random Number Bits Used  =                   63 *
+ * Random Number Stride     =               152917 *
+ ***************************************************
+
+
+ ***************************************************
+ * Random Number Seed will be advanced to that for *
+ * previous particle number =               600001 *
+ * New RN Seed for problem  =  8033170544192636929 *
+ * Next Random Number Seed  =  1273914558685251202 *
+ ***************************************************
+
+ 
+  comment.  total nubar used if fissionable isotopes are present.
+ 
+  warning.    1 materials had unnormalized fractions. print table 40.
+1cells                                                                                                  print table 60
+
+                               atom        gram                                            neutron                                     
+              cell      mat   density     density     volume       mass            pieces importance                                   
+
+        1        1        1  4.97906E-02 6.82275E-01 1.13097E+05 7.71635E+04           1  1.0000E+00                                   
+        2        2        0  0.00000E+00 0.00000E+00 2.68606E+05 0.00000E+00           1  1.0000E+00                                   
+        3        3        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00                                   
+
+ total                                               3.81704E+05 7.71635E+04
+
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+
+          1 warning message so far.
+1cross-section tables                                                                                   print table 100
+
+XSDIR used: /usr/projects/data/nuclear/mc/type1//xsdir_mcnp6.3
+
+
+  Tables from file Lib80x/H/1001.800nc:
+
+    Table 1001.00c
+      Projectile:    Neutron
+      Target:        H-1
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.75000E-02, 1.45000E+01] MeV
+      Date:          05/02/18
+      Comment:       H1 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L, et al.
+      Table Length:  1742 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   deuterons  
+
+  Tables from file Lib80x/H/1002.800nc:
+
+    Table 1002.00c
+      Projectile:    Neutron
+      Target:        H-2
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.75000E-02, 1.45000E+01] MeV
+      Date:          05/01/18
+      Comment:       H2 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L, et al.
+      Table Length:  24384 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   tritons    
+
+  Tables from file Lib80x/C/6012.800nc:
+
+    Table 6012.00c
+      Projectile:    Neutron
+      Target:        C-12
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       C12 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  156114 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, alphas     
+
+  Tables from file Lib80x/C/6013.800nc:
+
+    Table 6013.00c
+      Projectile:    Neutron
+      Target:        C-13
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.75000E-02, 1.43000E+01] MeV
+      Date:          05/02/18
+      Comment:       C13 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  164280 entries
+
+  Tables from file Lib80x/N/7014.800nc:
+
+    Table 7014.00c
+      Projectile:    Neutron
+      Target:        N-14
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.75000E-02, 1.42040E+01] MeV
+      Date:          05/01/18
+      Comment:       N14 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  94395 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, alphas     
+
+  Tables from file Lib80x/N/7015.800nc:
+
+    Table 7015.00c
+      Projectile:    Neutron
+      Target:        N-15
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       N15 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  24169 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/O/8016.800nc:
+
+    Table 8016.00c
+      Projectile:    Neutron
+      Target:        O-16
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.75000E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       O16 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  386519 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/O/8017.800nc:
+
+    Table 8017.00c
+      Projectile:    Neutron
+      Target:        O-17
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.45987E+01] MeV
+      Date:          05/02/18
+      Comment:       O17 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  3271 entries
+
+  Tables from file Lib80x/O/8018.800nc:
+
+    Table 8018.00c
+      Projectile:    Neutron
+      Target:        O-18
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.43104E+01] MeV
+      Date:          05/02/18
+      Comment:       O18 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  6390 entries
+
+  Tables from file Lib80x/Na/11023.800nc:
+
+    Table 11023.00c
+      Projectile:    Neutron
+      Target:        Na-23
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.98439E-02, 1.44000E+01] MeV
+      Date:          05/01/18
+      Comment:       Na23 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  62571 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Mg/12024.800nc:
+
+    Table 12024.00c
+      Projectile:    Neutron
+      Target:        Mg-24
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.88597E-02, 1.43000E+01] MeV
+      Date:          05/02/18
+      Comment:       Mg24 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  25882 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Mg/12025.800nc:
+
+    Table 12025.00c
+      Projectile:    Neutron
+      Target:        Mg-25
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.82126E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Mg25 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  23067 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Mg/12026.800nc:
+
+    Table 12026.00c
+      Projectile:    Neutron
+      Target:        Mg-26
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.42609E+01] MeV
+      Date:          05/02/18
+      Comment:       Mg26 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  22218 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Al/13027.800nc:
+
+    Table 13027.00c
+      Projectile:    Neutron
+      Target:        Al-27
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.91564E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Al27 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  85585 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/Si/14028.800nc:
+
+    Table 14028.00c
+      Projectile:    Neutron
+      Target:        Si-28
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.97147E-02, 1.42899E+01] MeV
+      Date:          05/02/18
+      Comment:       Si28 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  132033 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/Si/14029.800nc:
+
+    Table 14029.00c
+      Projectile:    Neutron
+      Target:        Si-29
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.93036E-02, 1.42899E+01] MeV
+      Date:          05/02/18
+      Comment:       Si29 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  117727 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/Si/14030.800nc:
+
+    Table 14030.00c
+      Projectile:    Neutron
+      Target:        Si-30
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.25000E-02, 1.42899E+01] MeV
+      Date:          05/02/18
+      Comment:       Si30 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  110825 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/S/16032.800nc:
+
+    Table 16032.00c
+      Projectile:    Neutron
+      Target:        S-32
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.83954E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       S32 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  53586 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/S/16033.800nc:
+
+    Table 16033.00c
+      Projectile:    Neutron
+      Target:        S-33
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.98728E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       S33 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  19357 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/S/16034.800nc:
+
+    Table 16034.00c
+      Projectile:    Neutron
+      Target:        S-34
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.62500E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       S34 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  19433 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/S/16036.800nc:
+
+    Table 16036.00c
+      Projectile:    Neutron
+      Target:        S-36
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.62500E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       S36 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  14500 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Cl/17035.800nc:
+
+    Table 17035.00c
+      Projectile:    Neutron
+      Target:        Cl-35
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.94546E-02, 1.44399E+01] MeV
+      Date:          05/02/18
+      Comment:       Cl35 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  133188 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/Cl/17037.800nc:
+
+    Table 17037.00c
+      Projectile:    Neutron
+      Target:        Cl-37
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99015E-02, 1.42478E+01] MeV
+      Date:          05/02/18
+      Comment:       Cl37 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  112044 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   alphas     
+
+  Tables from file Lib80x/K/19039.800nc:
+
+    Table 19039.00c
+      Projectile:    Neutron
+      Target:        K-39
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.98769E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       K39 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  97566 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/K/19040.800nc:
+
+    Table 19040.00c
+      Projectile:    Neutron
+      Target:        K-40
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.81250E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       K40 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  13944 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/K/19041.800nc:
+
+    Table 19041.00c
+      Projectile:    Neutron
+      Target:        K-41
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99763E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       K41 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et al
+      Table Length:  99850 entries
+
+      Secondary Production Data:
+        Expunged:    photons    
+
+  Tables from file Lib80x/Ti/22046.800nc:
+
+    Table 22046.00c
+      Projectile:    Neutron
+      Target:        Ti-46
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99441E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Ti46 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  188172 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   alphas     
+
+  Tables from file Lib80x/Ti/22047.800nc:
+
+    Table 22047.00c
+      Projectile:    Neutron
+      Target:        Ti-47
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99835E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Ti47 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  167274 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   alphas     
+
+  Tables from file Lib80x/Ti/22048.800nc:
+
+    Table 22048.00c
+      Projectile:    Neutron
+      Target:        Ti-48
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99545E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Ti48 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  179616 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   alphas     
+
+  Tables from file Lib80x/Ti/22049.800nc:
+
+    Table 22049.00c
+      Projectile:    Neutron
+      Target:        Ti-49
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99301E-02, 1.42500E+01] MeV
+      Date:          05/02/18
+      Comment:       Ti49 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  154934 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   alphas     
+
+  Tables from file Lib80x/Ti/22050.800nc:
+
+    Table 22050.00c
+      Projectile:    Neutron
+      Target:        Ti-50
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.97070E-02, 1.43558E+01] MeV
+      Date:          05/02/18
+      Comment:       Ti50 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  122374 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   alphas     
+
+  Tables from file Lib80x/Fe/26054.800nc:
+
+    Table 26054.00c
+      Projectile:    Neutron
+      Target:        Fe-54
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99399E-02, 1.43000E+01] MeV
+      Date:          05/01/18
+      Comment:       Fe54 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  1354687 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   helions,   
+                     alphas     
+
+  Tables from file Lib80x/Fe/26056.800nc:
+
+    Table 26056.00c
+      Projectile:    Neutron
+      Target:        Fe-56
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.93838E-02, 1.45000E+01] MeV
+      Date:          05/01/18
+      Comment:       Fe56 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  1941691 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   helions,   
+                     alphas     
+
+  Tables from file Lib80x/Fe/26057.800nc:
+
+    Table 26057.00c
+      Projectile:    Neutron
+      Target:        Fe-57
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.99887E-02, 1.45000E+01] MeV
+      Date:          05/01/18
+      Comment:       Fe57 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  1226465 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   helions,   
+                     alphas     
+
+  Tables from file Lib80x/Fe/26058.800nc:
+
+    Table 26058.00c
+      Projectile:    Neutron
+      Target:        Fe-58
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.97872E-02, 1.45000E+01] MeV
+      URR Range:     [3.50000E-01, 3.00000E+00] MeV
+      Date:          05/01/18
+      Comment:       Fe58 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  1203797 entries
+
+      Secondary Production Data:
+        Expunged:    photons,   protons,   deuterons, tritons,   helions,   
+                     alphas     
+
+  Tables from file Lib80x/Ga/31069.800nc:
+
+    Table 31069.00c
+      Projectile:    Neutron
+      Target:        Ga-69
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [4.68750E-02, 1.42500E+01] MeV
+      Date:          05/01/18
+      Comment:       Ga69 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  39689 entries
+
+  Tables from file Lib80x/Ga/31071.800nc:
+
+    Table 31071.00c
+      Projectile:    Neutron
+      Target:        Ga-71
+      Type:          Continuous
+      Temperature:   2.53010E-08 MeV
+      Energy Range:  [1.00000E-02, 1.50000E+01] MeV
+      Date:          05/01/18
+      Comment:       Ga71 Lib80x (jlconlin)  Reference LA-UR-18-24034 by Conlin, J.L., et a
+      Table Length:  45834 entries
+
+  Total Data Size: 8629173 entries
+
+ any neutrons with energy greater than emax = 1.42000E+01 from the source or from a collision will be resampled.
+
+ neutron cross sections outside the range from 5.0000E-02 to 1.4200E+01 mev are expunged.
+
+1particles and energy limits                                                                            print table 101
+
+                         particle      maximum       smallest      largest       always        always
+                         cutoff        particle      table         table         use table     use model
+   particle type         energy        energy        maximum       maximum       below         above
+
+    1  n    neutron     5.0000E-02    1.4200E+01    1.4204E+01    1.5000E+01    1.0000E+36    1.0000E+36
+ 
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ------------------------------------------------------------------------------------------
+ =====> Set up arrays for hash-based fast table search for xsec data
+
+    number of hash bins   =     8192
+    min hash table energy =  1.00000E-02
+    max hash table energy =  1.50000E+01
+
+           nuclide      ne      emin        emax     ave_bins  min_bins  max_bins
+          1001.00c     113 4.75000E-02 1.45000E+01       0.0       0.0       1.0
+          1002.00c     104 4.75000E-02 1.45000E+01       0.0       0.0       2.0
+          6012.00c     891 4.25000E-02 1.42500E+01       0.1       0.0       8.0
+          6013.00c     641 4.75000E-02 1.43000E+01       0.1       0.0       6.0
+          7014.00c    1143 4.75000E-02 1.42040E+01       0.1       0.0       6.0
+          7015.00c     574 4.25000E-02 1.42500E+01       0.1       0.0       4.0
+          8016.00c    2279 4.75000E-02 1.42500E+01       0.3       0.0      32.0
+          8017.00c     188 4.25000E-02 1.45987E+01       0.0       0.0       2.0
+          8018.00c    1135 4.25000E-02 1.43104E+01       0.1       0.0      10.0
+          11023.00c    2547 4.98439E-02 1.44000E+01       0.3       0.0      35.0
+          12024.00c    2012 4.88597E-02 1.43000E+01       0.2       0.0     196.0
+          12025.00c    1031 4.82126E-02 1.42500E+01       0.1       0.0      51.0
+          12026.00c     746 4.25000E-02 1.42609E+01       0.1       0.0      40.0
+          13027.00c    4376 4.91564E-02 1.42500E+01       0.5       0.0      62.0
+          14028.00c    7451 4.97147E-02 1.42899E+01       0.9       0.0     120.0
+          14029.00c    3894 4.93036E-02 1.42899E+01       0.5       0.0      67.0
+          14030.00c    4867 4.25000E-02 1.42899E+01       0.6       0.0      49.0
+          16032.00c    8686 4.83954E-02 1.42500E+01       1.1       0.0      80.0
+          16033.00c    1063 4.98728E-02 1.42500E+01       0.1       0.0      25.0
+          16034.00c    1220 4.62500E-02 1.42500E+01       0.1       0.0      20.0
+          16036.00c     184 4.62500E-02 1.42500E+01       0.0       0.0       2.0
+          17035.00c   16229 4.94546E-02 1.44399E+01       2.0       0.0      70.0
+          17037.00c   11628 4.99015E-02 1.42478E+01       1.4       0.0      67.0
+          19039.00c   21312 4.98769E-02 1.42500E+01       2.6       0.0      61.0
+          19040.00c     238 4.81250E-02 1.42500E+01       0.0       0.0       3.0
+          19041.00c   22076 4.99763E-02 1.42500E+01       2.7       0.0      70.0
+          22046.00c   11824 4.99441E-02 1.42500E+01       1.4       0.0      75.0
+          22047.00c    1350 4.99835E-02 1.42500E+01       0.2       0.0      43.0
+          22048.00c   12293 4.99545E-02 1.42500E+01       1.5       0.0      90.0
+          22049.00c    3141 4.99301E-02 1.42500E+01       0.4       0.0      59.0
+          22050.00c    4428 4.97070E-02 1.43558E+01       0.5       0.0      69.0
+          26054.00c   34487 4.99399E-02 1.43000E+01       4.2       0.0     223.0
+          26056.00c   40063 4.93838E-02 1.45000E+01       4.9       0.0      88.0
+          26057.00c    6996 4.99887E-02 1.45000E+01       0.9       0.0      78.0
+          26058.00c   17511 4.97872E-02 1.45000E+01       2.1       0.0     118.0
+          31069.00c     322 4.68750E-02 1.42500E+01       0.0       0.0       4.0
+          31071.00c      54 1.00000E-02 1.50000E+01       0.0       0.0       2.0
+
+ ------------------------------------------------------------------------------------------
+
+
+ ***********************************************************************************************************************
+
+ dump no.    1 on file HeSu1p_s04_2e5r.h5     nps =           0     coll =              0     ctm =        0.00   nrn = 
+                0
+
+          1 warning message so far.
+1starting mcrun.      cp0 =  0.10                                                                       print table 110
+
+      He and Su, ANE 2010 and 2011, test 1                                            
+ manager starting      35 MPI worker tasks with       1 threads each  09/12/23 07:06:26 
+ manager set rendezvous nps =               10000,  work chunks =    35    09/12/23 07:06:26 
+
+
+     nps    x          y          z          cell       surf     u          v          w        energy     weight      time
+
+      1  0.000E+00  0.000E+00  0.000E+00        1          0  7.963E-01  4.424E-01 -4.124E-01  1.259E+01  1.000E+00  0.000E+00
+      2  0.000E+00  0.000E+00  0.000E+00        1          0 -7.080E-01  7.042E-01  5.417E-02  3.909E+00  1.000E+00  0.000E+00
+      3  0.000E+00  0.000E+00  0.000E+00        1          0  4.093E-01 -6.873E-01 -6.001E-01  6.437E+00  1.000E+00  0.000E+00
+      4  0.000E+00  0.000E+00  0.000E+00        1          0 -9.978E-01 -4.553E-02  4.786E-02  9.251E+00  1.000E+00  0.000E+00
+      5  0.000E+00  0.000E+00  0.000E+00        1          0 -3.468E-01  2.271E-01  9.100E-01  7.196E+00  1.000E+00  0.000E+00
+      6  0.000E+00  0.000E+00  0.000E+00        1          0 -4.519E-01  3.385E-03  8.920E-01  4.730E+00  1.000E+00  0.000E+00
+      7  0.000E+00  0.000E+00  0.000E+00        1          0 -7.066E-01  6.040E-01  3.686E-01  1.245E+01  1.000E+00  0.000E+00
+      8  0.000E+00  0.000E+00  0.000E+00        1          0 -3.928E-01  5.619E-01 -7.280E-01  8.725E+00  1.000E+00  0.000E+00
+      9  0.000E+00  0.000E+00  0.000E+00        1          0 -6.456E-01 -7.487E-01  1.503E-01  1.946E+00  1.000E+00  0.000E+00
+     10  0.000E+00  0.000E+00  0.000E+00        1          0 -4.260E-01 -8.091E-01 -4.048E-01  1.071E+00  1.000E+00  0.000E+00
+     11  0.000E+00  0.000E+00  0.000E+00        1          0  9.399E-01 -3.010E-01 -1.614E-01  1.123E+01  1.000E+00  0.000E+00
+     12  0.000E+00  0.000E+00  0.000E+00        1          0 -4.175E-01  2.598E-01  8.707E-01  6.348E+00  1.000E+00  0.000E+00
+     13  0.000E+00  0.000E+00  0.000E+00        1          0  8.227E-01  4.724E-01 -3.162E-01  1.319E+01  1.000E+00  0.000E+00
+     14  0.000E+00  0.000E+00  0.000E+00        1          0  7.007E-02 -7.609E-01 -6.451E-01  1.272E+01  1.000E+00  0.000E+00
+     15  0.000E+00  0.000E+00  0.000E+00        1          0 -9.988E-01  6.470E-03  4.752E-02  1.339E+01  1.000E+00  0.000E+00
+     16  0.000E+00  0.000E+00  0.000E+00        1          0 -7.343E-01 -2.066E-01 -6.466E-01  2.417E+00  1.000E+00  0.000E+00
+     17  0.000E+00  0.000E+00  0.000E+00        1          0  4.702E-02 -1.067E-01  9.932E-01  2.068E+00  1.000E+00  0.000E+00
+     18  0.000E+00  0.000E+00  0.000E+00        1          0 -8.956E-01  6.074E-02 -4.406E-01  1.111E+01  1.000E+00  0.000E+00
+     19  0.000E+00  0.000E+00  0.000E+00        1          0 -1.937E-01 -9.363E-01  2.931E-01  9.191E+00  1.000E+00  0.000E+00
+     20  0.000E+00  0.000E+00  0.000E+00        1          0 -9.152E-01 -3.819E-01 -1.282E-01  1.048E+01  1.000E+00  0.000E+00
+     21  0.000E+00  0.000E+00  0.000E+00        1          0 -6.898E-01  7.237E-01 -2.128E-02  8.095E+00  1.000E+00  0.000E+00
+     22  0.000E+00  0.000E+00  0.000E+00        1          0  3.418E-01 -4.865E-02  9.385E-01  1.102E+01  1.000E+00  0.000E+00
+     23  0.000E+00  0.000E+00  0.000E+00        1          0  7.067E-01 -2.590E-01 -6.584E-01  2.678E+00  1.000E+00  0.000E+00
+     24  0.000E+00  0.000E+00  0.000E+00        1          0  6.914E-01 -6.574E-01 -2.997E-01  3.950E+00  1.000E+00  0.000E+00
+     25  0.000E+00  0.000E+00  0.000E+00        1          0  5.590E-01  7.966E-01  2.300E-01  4.186E+00  1.000E+00  0.000E+00
+     26  0.000E+00  0.000E+00  0.000E+00        1          0  9.338E-01  3.571E-01 -2.121E-02  8.737E+00  1.000E+00  0.000E+00
+     27  0.000E+00  0.000E+00  0.000E+00        1          0  2.194E-01  6.206E-01  7.528E-01  2.616E+00  1.000E+00  0.000E+00
+     28  0.000E+00  0.000E+00  0.000E+00        1          0  8.377E-01  3.962E-01 -3.758E-01  5.357E+00  1.000E+00  0.000E+00
+     29  0.000E+00  0.000E+00  0.000E+00        1          0  7.903E-01  2.466E-01  5.609E-01  2.176E+00  1.000E+00  0.000E+00
+     30  0.000E+00  0.000E+00  0.000E+00        1          0 -1.358E-01  4.211E-01  8.968E-01  2.725E+00  1.000E+00  0.000E+00
+     31  0.000E+00  0.000E+00  0.000E+00        1          0 -3.923E-01 -7.964E-01  4.603E-01  7.489E+00  1.000E+00  0.000E+00
+     32  0.000E+00  0.000E+00  0.000E+00        1          0  3.263E-01 -5.881E-01 -7.401E-01  1.997E+00  1.000E+00  0.000E+00
+     33  0.000E+00  0.000E+00  0.000E+00        1          0  3.492E-01  5.477E-01  7.603E-01  1.303E+00  1.000E+00  0.000E+00
+     34  0.000E+00  0.000E+00  0.000E+00        1          0  3.685E-01  6.340E-01 -6.799E-01  1.201E+01  1.000E+00  0.000E+00
+     35  0.000E+00  0.000E+00  0.000E+00        1          0 -2.763E-01 -9.561E-01 -9.779E-02  2.332E+00  1.000E+00  0.000E+00
+     36  0.000E+00  0.000E+00  0.000E+00        1          0  8.917E-01 -1.219E-01  4.359E-01  7.203E+00  1.000E+00  0.000E+00
+     37  0.000E+00  0.000E+00  0.000E+00        1          0  6.043E-01 -2.775E-01 -7.469E-01  2.584E+00  1.000E+00  0.000E+00
+     38  0.000E+00  0.000E+00  0.000E+00        1          0 -7.943E-02  7.508E-01  6.557E-01  1.280E+01  1.000E+00  0.000E+00
+     39  0.000E+00  0.000E+00  0.000E+00        1          0 -5.034E-01 -4.462E-01  7.400E-01  3.346E+00  1.000E+00  0.000E+00
+     40  0.000E+00  0.000E+00  0.000E+00        1          0 -5.171E-01 -6.398E-01  5.686E-01  9.186E+00  1.000E+00  0.000E+00
+     41  0.000E+00  0.000E+00  0.000E+00        1          0 -4.052E-02  9.619E-01  2.705E-01  4.235E+00  1.000E+00  0.000E+00
+     42  0.000E+00  0.000E+00  0.000E+00        1          0  8.861E-01  4.590E-01 -6.455E-02  7.792E+00  1.000E+00  0.000E+00
+     43  0.000E+00  0.000E+00  0.000E+00        1          0 -3.550E-01  7.523E-01  5.549E-01  7.175E+00  1.000E+00  0.000E+00
+     44  0.000E+00  0.000E+00  0.000E+00        1          0 -3.290E-01 -7.711E-01 -5.452E-01  4.685E+00  1.000E+00  0.000E+00
+     45  0.000E+00  0.000E+00  0.000E+00        1          0 -8.310E-01  5.563E-01  6.445E-03  1.113E+01  1.000E+00  0.000E+00
+     46  0.000E+00  0.000E+00  0.000E+00        1          0  2.950E-01 -5.493E-01  7.818E-01  1.597E+00  1.000E+00  0.000E+00
+     47  0.000E+00  0.000E+00  0.000E+00        1          0  3.071E-02 -6.392E-01 -7.685E-01  9.602E+00  1.000E+00  0.000E+00
+     48  0.000E+00  0.000E+00  0.000E+00        1          0  5.415E-01 -1.381E-01 -8.293E-01  7.591E+00  1.000E+00  0.000E+00
+     49  0.000E+00  0.000E+00  0.000E+00        1          0 -9.976E-01  1.278E-02  6.738E-02  7.568E+00  1.000E+00  0.000E+00
+     50  0.000E+00  0.000E+00  0.000E+00        1          0 -9.124E-01 -4.032E-01  7.028E-02  6.359E+00  1.000E+00  0.000E+00
+ manager set rendezvous nps =               20000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               30000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               40000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               50000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               60000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               70000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               80000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =               90000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              100000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              110000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              120000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              130000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              140000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              150000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              160000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              170000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              180000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              190000,  work chunks =    35    09/12/23 07:06:26 
+ manager set rendezvous nps =              200000,  work chunks =    35    09/12/23 07:06:26 
+1problem summary                                                                                                           
+
+      run terminated when      200000  particle histories were done.
++                                                                                                    09/12/23 07:06:26 
+
+ =====>    1882.74 M histories/hr    (based on wall-clock time in mcrun)
+
+
+      He and Su, ANE 2010 and 2011, test 1     probid =  09/12/23 07:06:20 
+
+ neutron creation    tracks      weight        energy            neutron loss        tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source              200000    1.0000E+00    7.5526E+00          escape              121063    5.7221E-01    3.1748E+00
+ nucl. interaction        0    0.            0.                  energy cutoff        78967    3.8102E-01    9.9692E-03
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            1    1.3002E-12    1.2894E-11
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ upscattering             0    0.            0.                  downscattering           0    0.            3.9059E+00
+ photonuclear             0    0.            0.                  capture                  0    4.6914E-02    4.6036E-01
+ (n,xn)                  62    2.8909E-04    2.6075E-04          loss to (n,xn)          31    1.4454E-04    1.8025E-03
+ prompt fission           0    0.            0.                  loss to fission          0    0.            0.        
+ delayed fission          0    0.            0.                  nucl. interaction        0    0.            0.        
+ prompt photofis          0    0.            0.                  particle decay           0    0.            0.        
+ tabular boundary         0    0.            0.                  tabular boundary         0    0.            0.        
+ tabular sampling         0    0.            0.                  elastic scatter          0    0.            0.        
+     total           200062    1.0003E+00    7.5528E+00              total           200062    1.0003E+00    7.5528E+00
+
+   number of neutrons banked                      30        average time of (shakes)              cutoffs
+   neutron tracks per source particle     1.0003E+00          escape            2.1851E+00          tco   1.0000E+20
+   neutron collisions per source particle 4.3093E+00          capture           3.3428E-01          eco   5.0000E-02
+   total neutron collisions                   861861          capture or escape 2.0449E+00          wc1   5.0000E-02
+   net multiplication              1.0001E+00 0.0000          any termination   2.3763E+00          wc2   1.0000E-02
+
+ computer time so far in this run     0.38 minutes            maximum number ever in bank         1
+ computer time in mcrun               0.11 minutes            bank overflows to backup file       0
+ source particles per minute            1.8841E+06
+ random numbers generated                 11264262            most random numbers used was         291 in history       88688
+
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
+
+ number of histories processed by each MPI task
+           0        5700        5720        5720        5700        5720        5720        5720        5700        5720
+        5720        5700        5720        5720        5720        5700        5720        5720        5700        5720
+        5720        5720        5700        5720        5720        5700        5720        5720        5720        5700
+        5720        5720        5700        5720        5720        5720
+
+ User-generated information from idum() and rdum():
+
+            N        IDUM(N)           RDUM(N)
+            1              1
+
+1neutron  activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1      200000       200030       861861    4.1559E+00   2.6947E+00   5.1392E+00   9.6394E-01   1.1581E+01
+        2        2      121063       121063            0    0.0000E+00   2.9837E+00   5.3033E+00   9.4378E-01   0.0000E+00
+
+           total        321063       321093       861861    4.1559E+00
+
+1tally        1        nps =      200000
++                                   current across the coal ball interface                                     
+           tally type 1    number of particles crossing a surface.                             
+           particle(s): neutrons 
+ 
+ surface  1                                                                                                                            
+                 5.72209E-01   1.82461E-03
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally        1
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.00      yes          yes            0.00      yes         yes            constant    random       7.20
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 5.7117E-01 to 5.7325E-01; 5.7012E-01 to 5.7430E-01; 5.6908E-01 to 5.7534E-01
+ estimated  symmetric confidence interval(1,2,3 sigma): 5.7117E-01 to 5.7325E-01; 5.7012E-01 to 5.7430E-01; 5.6908E-01 to 5.7534E-01
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally 1 with nps = 200000              print table 160
+
+
+ normed average tally per history  = 5.72209E-01          unnormed average tally per history  = 5.72209E-01
+ estimated tally relative error    = 0.0018               estimated variance of the variance  = 0.0000
+ relative error from zero tallies  = 0.0018               relative error from nonzero scores  = 0.0003
+
+ number of nonzero history tallies =      121062          efficiency for the nonzero tallies  = 0.6053
+ history number of largest  tally  =      154576          largest  unnormalized history tally = 1.51010E+00
+ (largest  tally)/(average tally)  = 2.63908E+00          (largest  tally)/(avg nonzero tally)= 1.59746E+00
+
+ (confidence interval shift)/mean  = 0.0000               shifted confidence interval center  = 5.72209E-01
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            5.72209E-01             5.72214E-01                     0.000008
+      relative error                  1.82461E-03             1.82460E-03                    -0.000003
+      variance of the variance        9.90569E-07             9.90834E-07                     0.000268
+      shifted center                  5.72209E-01             5.72209E-01                     0.000000
+      figure of merit                 2.82972E+06             2.82974E+06                     0.000006
+
+ the estimated inverse power slope of the 201 largest  tallies starting at 9.97449E-01 is 7.1995
+ the empirical history score probability density function appears to be increasing at the largest  history scores:
+ please examine. see print table 161.
+ the large score tail of the empirical history score probability density function appears to have no unsampled regions.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (1.884E+06)*( 1.226E+00)**2 = (1.884E+06)*(1.502E+00) = 2.830E+06
+
+1tally        4        nps =      200000
++                                   total flux in coal ball                                                    
+           tally type 4    track length estimate of particle flux.      units   1/cm**2        
+           particle(s): neutrons 
+
+           volumes 
+                   cell:       1                                                                                   
+                         1.00000E+00
+ 
+ cell  1                                                                                                                               
+                 3.44949E+01   8.66257E-04
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally        4
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.00      yes          yes            0.00      yes         yes            constant    random      10.00
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 3.4465E+01 to 3.4525E+01; 3.4435E+01 to 3.4555E+01; 3.4405E+01 to 3.4585E+01
+ estimated  symmetric confidence interval(1,2,3 sigma): 3.4465E+01 to 3.4525E+01; 3.4435E+01 to 3.4555E+01; 3.4405E+01 to 3.4585E+01
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally 4 with nps = 200000              print table 160
+
+
+ normed average tally per history  = 3.44949E+01          unnormed average tally per history  = 3.44949E+01
+ estimated tally relative error    = 0.0009               estimated variance of the variance  = 0.0000
+ relative error from zero tallies  = 0.0000               relative error from nonzero scores  = 0.0009
+
+ number of nonzero history tallies =      200000          efficiency for the nonzero tallies  = 1.0000
+ history number of largest  tally  =        7694          largest  unnormalized history tally = 1.65861E+02
+ (largest  tally)/(average tally)  = 4.80829E+00          (largest  tally)/(avg nonzero tally)= 4.80829E+00
+
+ (confidence interval shift)/mean  = 0.0000               shifted confidence interval center  = 3.44949E+01
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            3.44949E+01             3.44955E+01                     0.000019
+      relative error                  8.66257E-04             8.66446E-04                     0.000218
+      variance of the variance        3.04126E-05             3.06104E-05                     0.006503
+      shifted center                  3.44949E+01             3.44949E+01                     0.000000
+      figure of merit                 1.25542E+07             1.25487E+07                    -0.000435
+
+ the estimated slope of the 200 largest  tallies starting at  1.03755E+02 appears to be decreasing at least exponentially.
+ the large score tail of the empirical history score probability density function appears to have no unsampled regions.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (1.884E+06)*( 2.581E+00)**2 = (1.884E+06)*(6.663E+00) = 1.255E+07
+
+1status of the statistical checks used to form confidence intervals for the mean for each tally bin
+
+
+ tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
+
+        1   passed the 10 statistical checks for the tally fluctuation chart bin result               
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
+        4   passed the 10 statistical checks for the tally fluctuation chart bin result               
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
+
+ the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
+
+1tally fluctuation charts                              
+
+                                 tally        1                                    tally        4
+          nps       mean         error   vov   slope    fom           mean         error   vov   slope    fom
+        10000   5.69472796E-01 0.00822 1.9E-05 10.0 2300682       3.43179946E+01 0.00388 0.00066 10.0 1.0E+07
+        20000   5.69893779E-01 0.00580 9.4E-06 10.0 2520587       3.43915502E+01 0.00273 0.00033 10.0 1.1E+07
+        30000   5.71901975E-01 0.00472 6.5E-06 10.0 2647192       3.43960772E+01 0.00223 0.00023 10.0 1.2E+07
+        40000   5.70622901E-01 0.00410 4.8E-06 10.0 2679618       3.44034780E+01 0.00193 0.00017 10.0 1.2E+07
+        50000   5.70993707E-01 0.00366 3.8E-06 10.0 2714622       3.43903542E+01 0.00173 0.00013 10.0 1.2E+07
+        60000   5.70792502E-01 0.00334 3.2E-06 10.0 2735022       3.44082492E+01 0.00158 0.00011 10.0 1.2E+07
+        70000   5.71264808E-01 0.00309 2.8E-06 10.0 2757182       3.44274160E+01 0.00146 9.4E-05 10.0 1.2E+07
+        80000   5.70663927E-01 0.00289 2.4E-06 10.0 2761418       3.44229388E+01 0.00137 8.1E-05 10.0 1.2E+07
+        90000   5.71457869E-01 0.00272 2.2E-06 10.0 2779653       3.44409271E+01 0.00129 7.1E-05 10.0 1.2E+07
+       100000   5.71724043E-01 0.00258 2.0E-06 10.0 2790005       3.44611355E+01 0.00122 6.2E-05 10.0 1.2E+07
+       110000   5.71619484E-01 0.00246 1.8E-06 10.0 2793732       3.44761141E+01 0.00116 5.7E-05 10.0 1.3E+07
+       120000   5.72012746E-01 0.00236 1.6E-06 10.0 2803932       3.44886808E+01 0.00111 5.2E-05 10.0 1.3E+07
+       130000   5.72268515E-01 0.00226 1.5E-06 10.0 2811686       3.44845208E+01 0.00107 4.8E-05 10.0 1.3E+07
+       140000   5.72175144E-01 0.00218 1.4E-06 10.0 2812975       3.44966417E+01 0.00103 4.4E-05 10.0 1.3E+07
+       150000   5.72368916E-01 0.00211 1.3E-06 10.0 2818937       3.45055396E+01 0.00100 4.1E-05 10.0 1.3E+07
+       160000   5.72406662E-01 0.00204 1.2E-06  7.2 2822285       3.45061736E+01 0.00097 3.9E-05 10.0 1.2E+07
+       170000   5.71805046E-01 0.00198 1.2E-06  7.2 2816450       3.45043716E+01 0.00094 3.6E-05 10.0 1.2E+07
+       180000   5.71931656E-01 0.00192 1.1E-06  7.2 2821836       3.45016193E+01 0.00091 3.4E-05 10.0 1.3E+07
+       190000   5.72227253E-01 0.00187 1.0E-06  7.2 2828312       3.44945765E+01 0.00089 3.2E-05 10.0 1.3E+07
+       200000   5.72209394E-01 0.00182 9.9E-07  7.2 2829718       3.44948598E+01 0.00087 3.0E-05 10.0 1.3E+07
+
+ ***********************************************************************************************************************
+
+ dump no.    2 on file HeSu1p_s04_2e5r.h5     nps =      200000     coll =         861861     ctm =        0.11   nrn = 
+         11264262
+
+          1 warning message so far.
+
+
+ run terminated when      200000  particle histories were done.
+
+ computer time =    0.38 minutes
+
+ mcnp6.mpi version 6.3.0 06/07/23                     09/12/23 07:06:26                     probid =  09/12/23 07:06:20 
+#!/bin/tcsh
+
+  set CODEDIR = "/users/fave/mcnp_tools/mcnp6.3_mod.mpi"
+# THISSCR has to be in PROBDIR
+  set PROBDIR = "/lustre/scratch4/yellow/fave/test1-flux"
+  set THISSCR = "runtest"
+
+# module unload hdf5-parallel
+  module purge
+  module use /usr/projects/mcnp/modules
+# module load mcnp6/6.3
+  module load intel-classic/2022.0.2 openmpi/4.1.1 hdf5-parallel/1.10.7 friendly-testing mcnp_data/devel
+# module load intel/19.0.4 openmpi/2.1.2
+  setenv DATAPATH /usr/projects/data/nuclear/mc/type1/
+  module list
+
+  echo STARTING RUN:  `date "+ %D %H:%M:%S"`
+
+  foreach f ( HeSu0_s01_2e5 HeSu0_s02_2e5 HeSu0_s03_2e5 HeSu0_s04_2e5 HeSu0_s05_2e5 \
+              HeSu1m_s01_2e5 HeSu1m_s02_2e5 HeSu1m_s03_2e5 HeSu1m_s04_2e5 HeSu1m_s05_2e5 \
+              HeSu1p_s01_2e5 HeSu1p_s02_2e5 HeSu1p_s03_2e5 HeSu1p_s04_2e5 HeSu1p_s05_2e5 \
+              HeSu0_s01_1e6 HeSu1m_s01_1e6 HeSu1p_s01_1e6 )
+    if ( ! -e $PROBDIR/${f} ) then
+      echo $PROBDIR/${f} does not exist
+      continue
+    endif
+    if ( -e $PROBDIR/${f}.o ) then
+      echo $PROBDIR/${f}.o exists
+      continue
+    endif
+#   mcnpexe -np 36  n=${f}
+    mpirun -np 36 $CODEDIR n=${f}
+    cat $THISSCR >> ${f}o
+    mv ${f}o ${f}.o
+    rm ${f}r.h5
+  end
+
+  echo FINISHED RUN:  `date "+ %D %H:%M:%S"`
+
+

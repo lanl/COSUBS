@@ -1,0 +1,33 @@
+COrrelated SAmpling with Batch Statistics using MCNP TFCs, version 20231124
+command line:   ccc -b HeSu0_s1000_1e6.o -p HeSuc6_s1000_1e6.o -o output
+base file:      HeSu0_s1000_1e6.o
+negative file:  <none>
+positive file:  HeSuc6_s1000_1e6.o
+relative pert:  0.0000E+00
+tally for norm: <none>
+unc. output:    abs
+output file:    output
+
+number of files: 1
+number of perturbations: 0
+number of batches: 1000
+number of histories: 1000000
+uncertainties are absolute, not relative.
+
+tally 1
+          Difference                  Uncertainty
+      B   Difference    Cov,batch     NoCov,batch   NoCov,nobch
+      10 -6.730000E-03  2.958634E-04  6.304015E-04  7.013327E-04
+      20 -6.730000E-03  3.133666E-04  5.519396E-04  7.013327E-04
+      25 -6.730000E-03  3.531376E-04  6.865806E-04  7.013327E-04
+      40 -6.730000E-03  3.321467E-04  6.138928E-04  7.013327E-04
+      50 -6.730000E-03  3.332489E-04  6.987019E-04  7.013327E-04
+     100 -6.730000E-03  3.053741E-04  6.813997E-04  7.013327E-04
+     125 -6.730000E-03  3.180470E-04  7.269856E-04  7.013327E-04
+     200 -6.730000E-03  3.101810E-04  6.594244E-04  7.013327E-04
+     250 -6.730000E-03  3.245236E-04  7.211341E-04  7.013327E-04
+     500 -6.730000E-03  3.118147E-04  6.954760E-04  7.013327E-04
+    1000 -6.730000E-03  3.127058E-04  7.077907E-04  7.013327E-04
+
+  time for base                   15 s
+  time for positive               15 s
