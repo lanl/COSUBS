@@ -2,6 +2,19 @@
 ! COrrelated Sampling Using Batch Statistics, using MCNP TFCs.
 ! Jeffrey A. Favorite, Los Alamos National Laboratory, XTD-RTA.
 ! An early Python version for testing was written by Michael Squire, U. Texas-San Antonio.
+!
+! Copyright 2023. Triad National Security, LLC. All rights reserved.
+!
+! This program was produced under U.S. Government contract 89233218CNA000001
+! for Los Alamos National Laboratory (LANL), which is operated by Triad National
+! Security, LLC for the U.S. Department of Energy/National Nuclear Security
+! Administration. All rights in the program are reserved by Triad National Security,
+! LLC, and the U.S. Department of Energy/National Nuclear Security Administration.
+! The Government is granted for itself and others acting on its behalf a nonexclusive,
+! paid-up, irrevocable worldwide license in this material to reproduce, prepare
+! derivative works, distribute copies to the public, perform publicly and display
+! publicly, and to permit others to do so.
+!
     implicit none
 ! compile with
 !   ifort -o cosubs -r8 -i8 -check bounds -warn unused -traceback cosubs.F90
@@ -547,7 +560,7 @@
 ! https://cyber.dabamos.de/programming/modernfortran/command-line-arguments.html
     implicit none
     character version*8
-    parameter (version="20240104")
+    parameter (version="20240206")
     integer iuo,nhash,italratio,iunc
     character bfile*120,pfile*120,nfile*120,ofile*120
     logical lpfile,lnfile,lofile
