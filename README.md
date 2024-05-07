@@ -1,13 +1,14 @@
 # COSUBS (COrrelated Sampling Using Batch Statistics)
 
-COSUBS reads MCNP6 output files and uses tally fluctiation charts
+COSUBS reads MCNP6 output files and uses tally fluctuation charts
 (TFCs) to apply batch statistics to combinations of tallies.
-The full descrition and user manual is published in 
+The full description and user manual is published in 
 Nuclear Science and Technology Open Research (NSTOR):
 
 > Jeffrey A. Favorite, "A General-Purpose Code for Correlated Sampling Using
 > Batch Statistics with MCNP6 for Fixed-Source Problems,"
-> Nuclear Science and Technology Open Research, submitted (2023).
+> Nuclear Science and Technology Open Research, awaiting open peer review (2024);
+> https://doi.org/10.12688/nuclscitechnolopenres.17496.1.
 
 COSUBS has been built and tested only on a Linux platform with an Intel
 FORTRAN compiler.
