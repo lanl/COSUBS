@@ -15,7 +15,7 @@ FORTRAN compiler.
 
 # Directory Contents
 
-src--will contain source code when approved for open source by LANL
+src--source code
 
 test--complete set of test inputs and outputs used in the NSTOR paper
 
