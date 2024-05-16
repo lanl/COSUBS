@@ -6,8 +6,8 @@ The full description and user manual is published in
 Nuclear Science and Technology Open Research (NSTOR):
 
 > Jeffrey A. Favorite, "A General-Purpose Code for Correlated Sampling Using
-> Batch Statistics with MCNP6 for Fixed-Source Problems,"
-> Nuclear Science and Technology Open Research, awaiting open peer review (2024);
+> Batch Statistics with MCNP6 for Fixed-Source Problems [version 1; peer review: 2 approved],"
+> Nuclear Science and Technology Open Research, 2:33 (2024);
 > https://doi.org/10.12688/nuclscitechnolopenres.17496.1.
 
 COSUBS has been built and tested only on a Linux platform with an Intel
